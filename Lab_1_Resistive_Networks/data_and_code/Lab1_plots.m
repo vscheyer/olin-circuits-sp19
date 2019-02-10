@@ -16,14 +16,17 @@ plot(Iout,best_line1,'-')
 xlim([0,.015])
 ylim([-.001,5.5])
 
-hold off;
+legend('Experimental', 'Theoretical')
+legend('boxoff')
+legend('Location','northwest')
 
+hold off;
 %% Exercise 2
 
 figure;
 plot(VinExp2,VoutExp2,'o')
-title( "Voltage Divder Ratio")
-xlabel("Voltag In (Volts)");
+title( "Voltage Divider Ratio")
+xlabel("Voltage In (Volts)");
 ylabel("Voltage Out (Volts)");
 hold on;
 
@@ -35,20 +38,32 @@ plot(VinExp2,best_line2,'-')
 xlim([-.007,6])
 ylim([-.007,3])
 
+legend('Experimental', 'Theoretical')
+legend('boxoff')
+legend('Location','northwest')
+
+hold off;
 %% Exercise 3
 
 figure;
 
-plot(IinExp3,IoutExp3,'o');
-title( "Current Divder Ratio")
+new_IoutExp3 = -1.*IoutExp3;
+plot(IinExp3,new_IoutExp3,'o');
+title( "Current Divder Ratio");
 xlabel("Current In (Amps)");
 ylabel("Current Out (Amps)");
 hold on;
 
-best_coeff3 = polyfit(IinExp3,IoutExp3,1)
-% line of best fit = .5032(x) + -.0053
+best_coeff3 = polyfit(IinExp3,new_IoutExp3,1);
+% line of best fit = .5446(x) + 0
 best_line3 = polyval(best_coeff3,IinExp3);
 plot(IinExp3,best_line3,'-')
 
+xlim([0,.0014])
+ylim([0,.0007])
+
+legend('Experimental', 'Theoretical')
+legend('boxoff')
+legend('Location','northwest')
 
 hold off;
