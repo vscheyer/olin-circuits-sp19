@@ -84,7 +84,7 @@ semilogx(I1_t,'*')
 hold on
 semilogx(I2_e,'+')
 hold on
-semilogx(I2_t,'d')
+semilogx(I2_t,'s')
 
 
 title( "R-2R Network Current Measurements");
@@ -95,6 +95,5 @@ xlim([0,4.5])
 ylim([0,.27])
 
 grid on
-grid minor
 
 hold off
